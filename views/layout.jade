@@ -1,7 +1,96 @@
 doctype html
-html
+html(lang='en')
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(charset="utf-8")
+    block title
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="copyright", content="{{ Lang::get('general.copyright') }}")
+    meta(name="description", content="{{ Lang::get('general.description') }}")
+    meta(name="keywords", content="{{ Lang::get('general.keywords') }}")
+    meta(name="author", content="Alexei Antipov")
+
+    //  FB analytics
+    //<meta property="fb:admins" content="100001046469364"/>
+
+    link(href="/css/bootstrap.min.css", rel="stylesheet")
+    //Include responsive
+    link(href="/css/bootstrap-responsive.min.css", rel="stylesheet")
+    link(href="/css/font-awesome.css", rel="stylesheet")
+    link(href="/js/shadowbox/shadowbox.css", rel="stylesheet")
+    link(href="/css/style.css", rel="stylesheet")
+    //HTML5 shim
+    //[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]
+
+    link(rel="shortcut icon", type="image/x-icon", href="/favicon.ico")
+    link(rel="icon", type="image/x-icon", href="/favicon.ico")
   body
-    block content
+    #wrap
+      .masthead.clearfix
+        .container
+          .logo.pull-left
+            // Lang::get('general.alina')
+          .socials.pull-right
+            a(href="http://www.facebook.com/profile.php?id=100003894688630")
+              i.icon-facebook
+            a(href="mailto:ashevyakova@gmail.com")
+              i.icon-envelope
+          .pull-right
+            a(class="flag flag-<?php echo $anotherLocale; ?>" href="<?php echo $getAnotherLangUrl(); ?>")
+              img(src="/img/empty.gif", alt="country flag")
+      #main.container
+        .navlinks.clearfix.text-center
+          a(class="active<?php echo($type == 'painting'); ?>" href="{{$paintingUrl}}")
+            // Lang::get('general.painting')
+          a(class="active<?php echo($type == 'graphic'); ?>" href="{{$langPref}}/graphic")
+            // Lang::get('general.graphic')
+        block content
+
+    footer.footer.text-center
+      p
+        | Created by
+        a(href="http://alexei.me/")  Alexei Antipov
+
+    script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js")
+    script(src="/js/bootstrap.min.js")
+    script(src="/js/shadowbox/shadowbox.js")
+    script(src="/js/jquery.lazyload.min.js")
+    script(src="/js/jquery.easing.js")
+    script(src="/js/script.js")
+    // Facebook Like button
+    #fb-root
+    script.
+      (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "//connect.facebook.net/{{$fbLang}}/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+
+    // Yandex.Metrika
+    script(src='//mc.yandex.ru/metrika/watch.js')
+    script.
+      try {
+          var yaCounter753383 = new Ya.Metrika(753383);
+      } catch (e) {
+      }
+    noscript
+      img(src='//mc.yandex.ru/watch/753383', style='position:absolute', alt='')
+    // /Yandex.Metrika
+
+    // Google.Metrika
+    script.
+      (function (i, s, o, g, r, a, m) {
+          i['GoogleAnalyticsObject'] = r;
+          i[r] = i[r] || function () {
+              (i[r].q = i[r].q || []).push(arguments)
+          }, i[r].l = 1 * new Date();
+          a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+          a.async = 1;
+          a.src = g;
+          m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+          ga('create', 'UA-41512126-1', 'shevyakova.com');
+      ga('send', 'pageview');
+    // /Google.Metrika
