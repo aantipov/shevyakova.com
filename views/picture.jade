@@ -1,0 +1,24 @@
+extends layout
+
+block title
+//{{ Lang::get('general.alina') }}. "{{$title}}" {{$suffix}}
+
+block content
+  - var suffix = (type === 'graphic') ? '' : text.general.oilOnCanvas + ' ' + info['dims'] + ' ' + info['year'];
+  - var title = info[lang];
+  #picture-wrapper
+    .imginfo.text-center
+      h1= title
+      p= suffix
+    .img-wrapper.text-center.loading(data-src="/images/#{type}/#{image}.jpg", data-alt="#{title}")
+    noscript
+      // Degrade gracefully
+      .img-wrapper.text-center.loading
+        img(src="/images/#{type}/#{image}.jpg")
+    .fb-like(
+    data-href="<?php echo URL::current(); ?>",
+    data-send="false",
+    data-layout="button_count",
+    data-width="450",
+    data-show-faces="false",
+    data-font="arial")
