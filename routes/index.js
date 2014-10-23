@@ -54,8 +54,7 @@ function render(res, lang, category, type, image) {
     type: category,
     lang: lang,
     text: {
-      general: require('../lang/general')[lang],
-      error: require('../lang/error')[lang]
+      general: require('../lang/general')[lang]
     }
   };
 

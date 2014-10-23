@@ -1,6 +1,65 @@
-extends layout
+//.
+    <?php
+    $locale = Lang::getLocale();
+    $anotherLocale = ($locale == 'ru') ? 'en' : 'ru';
+    $langPref = ($locale == 'en') ? '/en' : '';
+    $paintingUrl = ($locale == 'en') ? '/en' : '/';
+    $getAnotherLangUrl = function () use ($locale) {
+        return ($locale == 'ru') ? '/en' : '/';
+    };
+    ?>
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    block title
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="copyright", content="{{ Lang::get('general.copyright') }}")
+    meta(name="description", content="{{ Lang::get('general.description') }}")
+    meta(name="keywords", content="{{ Lang::get('general.keywords') }}")
+    meta(name="author", content="Alexei Antipov")
 
-block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+    link(href="/css/bootstrap.min.css", rel="stylesheet")
+    //Include responsive
+    link(href="/css/bootstrap-responsive.min.css", rel="stylesheet")
+    link(href="/css/font-awesome.css", rel="stylesheet")
+    link(href="/js/shadowbox/shadowbox.css", rel="stylesheet")
+    link(href="/css/style.css", rel="stylesheet")
+    //HTML5 shim
+    //[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]
+
+    link(rel="shortcut icon", type="image/x-icon", href="/favicon.ico")
+    link(rel="icon", type="image/x-icon", href="/favicon.ico")
+
+  body
+    #wrap
+      .masthead.clearfix
+        .container
+          .logo.pull-left.
+            <?php echo Lang::get('general.alina'); ?>
+          .socials.pull-right
+            a(href="http://www.facebook.com/profile.php?id=100003894688630")
+              i.icon-facebook
+            a(href="mailto:ashevyakova@gmail.com")
+              i.icon-envelope
+          .pull-right
+            a(class="flag flag-<?php echo $anotherLocale; ?>" href="<?php echo $getAnotherLangUrl(); ?>")
+              img(src="/img/empty.gif", alt="country flag")
+      #main.container
+        .navlinks.clearfix.text-center
+          a(class="active<?php echo($type == 'painting'); ?>" href="{{$paintingUrl}}")
+            // Lang::get('general.painting')
+          a(class="active<?php echo($type == 'graphic'); ?>" href="{{$langPref}}/graphic")
+            // Lang::get('general.graphic')
+        #error.alert.alert-error
+          h3.header= header
+
+          .descr!= descr
+
+    footer.footer.text-center
+      p
+        | Created by
+        a(href="http://alexei.me/")  Alexei Antipov
+    script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js")
+    script(src="/js/bootstrap.min.js")
+    script(src="/js/jquery.easing.js")
