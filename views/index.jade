@@ -1,7 +1,5 @@
 extends layout
 
-block title
-
 block content
   #gallery-wrapper
     ul#thumbnails.thumbnails
@@ -20,7 +18,7 @@ block content
                 br
                 = suffix
               span.wrap-links
-                a(href= "#{linkPrefix}/#{type}/#{img}", data-title="{{$title}} / #{suffix}")
+                a(href= "#{linkPrefix}/#{type}/#{img}", data-title="#{info[lang]} / #{suffix}")
                   i.icon-link
                 a.lbox(
                 href="/images/#{type}/#{img}.jpg"

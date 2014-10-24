@@ -6,35 +6,35 @@ var router = express.Router();
 module.exports = router;
 
 router.get('/', function (req, res, next) {
-  render(res, next, 'ru', 'painting', 'gallery');
+  render(req, res, next, 'ru', 'painting', 'gallery');
 });
 
 router.get('/en', function (req, res, next) {
-  render(res, next, 'en', 'painting', 'gallery');
+  render(req, res, next, 'en', 'painting', 'gallery');
 });
 
 router.get('/graphic', function (req, res, next) {
-  render(res, next, 'ru', 'graphic', 'gallery');
+  render(req, res, next, 'ru', 'graphic', 'gallery');
 });
 
 router.get('/en/graphic', function (req, res, next) {
-  render(res, next, 'en', 'graphic', 'gallery');
+  render(req, res, next, 'en', 'graphic', 'gallery');
 });
 
 router.get('/painting/:image', function (req, res, next) {
-  render(res, next, 'ru', 'painting', 'picture', req.params.image);
+  render(req, res, next, 'ru', 'painting', 'picture', req.params.image);
 });
 
 router.get('/en/painting/:image', function (req, res, next) {
-  render(res, next, 'en', 'painting', 'picture', req.params.image);
+  render(req, res, next, 'en', 'painting', 'picture', req.params.image);
 });
 
 router.get('/graphic/:image', function (req, res, next) {
-  render(res, next, 'ru', 'graphic', 'picture', req.params.image);
+  render(req, res, next, 'ru', 'graphic', 'picture', req.params.image);
 });
 
 router.get('/en/graphic/:image', function (req, res, next) {
-  render(res, next, 'en', 'graphic', 'picture', req.params.image);
+  render(req, res, next, 'en', 'graphic', 'picture', req.params.image);
 });
 
 router.get('/ru', function (req, res, next) {
@@ -44,7 +44,8 @@ router.get('/ru', function (req, res, next) {
 /**
  *  Function to get router config
  *
- * @param {Object}    res       'ru' or 'en'
+ * @param {Object}    req       request obj
+ * @param {Object}    res       result obj
  * @param {Function}  next      next function
  * @param {String}    lang      'ru' or 'en'
  * @param {String}    category  'painting' or 'graphic'
@@ -52,7 +53,7 @@ router.get('/ru', function (req, res, next) {
  * @param {String}    [image]   (optional) Image name from the request
  * @returns {{type: *, lang: *, text: {general: *, error: *}}}
  */
-function render(res, next, lang, category, type, image) {
+function render(req, res, next, lang, category, type, image) {
   var config = {
     type: category,
     lang: lang,
@@ -60,6 +61,18 @@ function render(res, next, lang, category, type, image) {
       general: require('../lang/general')[lang]
     }
   };
+
+  // Get another lang page's url
+  if (lang === 'ru') {
+    config.anotherLangUrl = '/en';
+    if (req.url !== '/') {
+      config.anotherLangUrl += req.url;
+    }
+  } else {
+    config.anotherLangUrl = req.url.substr(3) || '/';
+  }
+  
+  config.fbLang = (lang === 'ru') ? 'ru_RU' : 'en_US';
 
   if (type === 'gallery') {
     config.images = (category === 'graphic') ? require('../models/graphic') : require('../models/paintings');

@@ -36,8 +36,8 @@ html(lang="en")
               img(src="/img/empty.gif", alt="country flag")
       #main.container
         .navlinks.clearfix.text-center
-          a(class="active1" href="/" + (lang === 'ru' ? '' : 'en'))= text.general.painting
-          a(class="active" href="/" + (lang === 'ru' ? '' : 'en/') + "graphic")= text.general.graphic
+          a(class="active" href="/" + (lang === 'ru' ? '' : 'en'))= text.general.painting
+          a(href="/" + (lang === 'ru' ? '' : 'en/') + "graphic")= text.general.graphic
         #error.alert.alert-error
           h3.header= header
 
