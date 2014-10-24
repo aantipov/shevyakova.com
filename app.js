@@ -23,6 +23,15 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Remove trailing slashes.
+app.use(function (req, res, next) {
+  if (req.url.substr(-1) === '/' && req.url.length > 1) {
+    res.redirect(301, req.url.slice(0, -1));
+  } else {
+    next();
+  }
+});
+
 app.use('/', routes);
 
 // catch 404 and forward to error handler
