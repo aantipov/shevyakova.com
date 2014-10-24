@@ -1,5 +1,28 @@
 extends layout
 
+block title
+
 block content
-  h1= title
-  p Welcome to #{title}
+  #gallery-wrapper
+    ul#thumbnails.thumbnails
+      each info, img in images
+        - var suffix = (type === 'graphic') ? '' : text.general.oilOnCanvas + ' ' + info.dims + ' ' + info.year;
+        - var linkPrefix = (lang === 'en') ? '/en': '';
+        li.span3(data-type="portraits")
+          .thumbnail
+            img.lazy(src="/img/lazy.png", alt="", data-original='/images/#{type}/thumb_#{img}.jpg')
+            noscript
+              // Degrade gracefully
+              img(src='/images/#{type}/thumb_#{img}.jpg', width="640", heigh="480")
+            span.caption
+              span.descr
+                span.title= info[lang]
+                br
+                = suffix
+              span.wrap-links
+                a(href= "#{linkPrefix}/#{type}/#{img}", data-title="{{$title}} / #{suffix}")
+                  i.icon-link
+                a.lbox(
+                href="/images/#{type}/#{img}.jpg"
+                data-title="<p class='text-center'><b>#{info[lang]}</b><span>#{suffix}</span></p>")
+                  i.icon-zoom-in

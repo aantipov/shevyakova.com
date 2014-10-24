@@ -74,5 +74,5 @@ function render(res, next, lang, category, type, image) {
     }
   }
 
-  res.render(type, config);
+  res.render(type === 'gallery' ? 'index' : 'picture', config);
 }
