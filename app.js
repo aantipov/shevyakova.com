@@ -1,3 +1,5 @@
+'use strict';
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -30,41 +32,25 @@ app.use(function (req, res, next) {
   next(err);
 });
 
-// error handlers
-
-// development error handler
+// error handler
 // will print stacktrace
-// TODO: find out how to manage it.
-if (app.get('env') === 'development') {
-  app.use(function (err, req, res, next) {
-    var lang = 'ru';
-    var text = {
-      error: require('./lang/error')[lang][(err.status || 404) ? 404 : 500],
-      general: require('./lang/general')[lang]
-    };
-    res.status(err.status || 500);
-    res.render('error', {
-      header: text.error.header,
-      descr: text.error.descr,
-      message: err.message,
-      error: err,
-      text: text.general
-    });
-  });
-}
-
-// production error handler
-// no stacktraces leaked to user
 app.use(function (err, req, res, next) {
-  var lang = 'ru';
-  var text = require('./lang/error')[lang];
+  var isProductionMode = app.get('env') !== 'development';
+  var lang = (req.url.substr(1, 2) === 'en') ? 'en' : 'ru';
+  var text = {
+    error: require('./lang/error')[lang][(err.status === 404) ? 404 : 500],
+    general: require('./lang/general')[lang]
+  };
   res.status(err.status || 500);
   res.render('error', {
-    header: text.header,
-    descr: text.descr,
+    header: text.error.header,
+    descr: text.error.descr,
     message: err.message,
-    error: {}
+    error: isProductionMode ? {} : err,// no stacktraces leaked to user
+    text: text,
+    lang: lang
   });
+
 });
 
 

@@ -12,7 +12,7 @@ doctype html
 html(lang="en")
   head
     meta(charset="utf-8")
-    block title
+    title= text.error.title
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(name="copyright", content="{{ Lang::get('general.copyright') }}")
     meta(name="description", content="{{ Lang::get('general.description') }}")
@@ -35,15 +35,14 @@ html(lang="en")
     #wrap
       .masthead.clearfix
         .container
-          .logo.pull-left.
-            <?php echo Lang::get('general.alina'); ?>
+          .logo.pull-left= text.alina
           .socials.pull-right
             a(href="http://www.facebook.com/profile.php?id=100003894688630")
               i.icon-facebook
             a(href="mailto:ashevyakova@gmail.com")
               i.icon-envelope
           .pull-right
-            a(class="flag flag-<?php echo $anotherLocale; ?>" href="<?php echo $getAnotherLangUrl(); ?>")
+            a(class="flag flag-" + (lang === 'ru' ? 'en' : 'ru'), href="/" + (lang === 'ru' ? 'en' : 'ru'))
               img(src="/img/empty.gif", alt="country flag")
       #main.container
         .navlinks.clearfix.text-center
