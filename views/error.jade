@@ -1,13 +1,3 @@
-//.
-    <?php
-    $locale = Lang::getLocale();
-    $anotherLocale = ($locale == 'ru') ? 'en' : 'ru';
-    $langPref = ($locale == 'en') ? '/en' : '';
-    $paintingUrl = ($locale == 'en') ? '/en' : '/';
-    $getAnotherLangUrl = function () use ($locale) {
-        return ($locale == 'ru') ? '/en' : '/';
-    };
-    ?>
 doctype html
 html(lang="en")
   head
@@ -35,21 +25,19 @@ html(lang="en")
     #wrap
       .masthead.clearfix
         .container
-          .logo.pull-left= text.alina
+          .logo.pull-left= text.general.alina
           .socials.pull-right
             a(href="http://www.facebook.com/profile.php?id=100003894688630")
               i.icon-facebook
             a(href="mailto:ashevyakova@gmail.com")
               i.icon-envelope
           .pull-right
-            a(class="flag flag-" + (lang === 'ru' ? 'en' : 'ru'), href="/" + (lang === 'ru' ? 'en' : 'ru'))
+            a(class="flag flag-" + (lang === 'ru' ? 'en' : 'ru'), href="/" + (lang === 'ru' ? 'en' : ''))
               img(src="/img/empty.gif", alt="country flag")
       #main.container
         .navlinks.clearfix.text-center
-          a(class="active<?php echo($type == 'painting'); ?>" href="{{$paintingUrl}}")
-            // Lang::get('general.painting')
-          a(class="active<?php echo($type == 'graphic'); ?>" href="{{$langPref}}/graphic")
-            // Lang::get('general.graphic')
+          a(class="active1" href="/" + (lang === 'ru' ? '' : 'en'))= text.general.painting
+          a(class="active" href="/" + (lang === 'ru' ? '' : 'en/') + "graphic")= text.general.graphic
         #error.alert.alert-error
           h3.header= header
 

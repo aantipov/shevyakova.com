@@ -5,7 +5,7 @@ var words = {
       header: "404: Page not Found",
       descr: [
         '<p>Sorry, but the page you are looking for has not been found. Try checking the URL for errors.</p>',
-        '<p>If you feel you\'ve reached this page as an error on my part, please',
+        '<p>If you feel you\'ve reached this page as an error on my part, please ',
         '<a href="mailto:ashevyakova@gmail.com">contact me</a>',
         '</p>'
       ].join('')
