@@ -10,11 +10,11 @@ block content
     .imginfo.text-center
       h1= title
       p= suffix
-    .img-wrapper.text-center.loading(data-src="/images/#{type}/#{image}.jpg", data-alt="#{title}")
+    .img-wrapper.text-center.loading(data-src=imgUrl + "#{type}/#{image}.jpg", data-alt="#{title}")
     noscript
       // Degrade gracefully
       .img-wrapper.text-center.loading
-        img(src="/images/#{type}/#{image}.jpg")
+        img(src=imgUrl + "#{type}/#{image}.jpg")
     .fb-like(
     data-href="<?php echo URL::current(); ?>",
     data-send="false",

@@ -59,7 +59,9 @@ function render(req, res, next, lang, category, type, image) {
     lang: lang,
     text: {
       general: require('../lang/general')[lang]
-    }
+    },
+    imgUrl: 'https://s3.eu-central-1.amazonaws.com/shevyakova.com.images/',
+    fbLang: (lang === 'ru') ? 'ru_RU' : 'en_US'
   };
 
   // Get another lang page's url
@@ -71,8 +73,6 @@ function render(req, res, next, lang, category, type, image) {
   } else {
     config.anotherLangUrl = req.url.substr(3) || '/';
   }
-  
-  config.fbLang = (lang === 'ru') ? 'ru_RU' : 'en_US';
 
   if (type === 'gallery') {
     config.images = (category === 'graphic') ? require('../models/graphic') : require('../models/paintings');

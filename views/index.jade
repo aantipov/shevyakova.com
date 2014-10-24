@@ -8,10 +8,10 @@ block content
         - var linkPrefix = (lang === 'en') ? '/en': '';
         li.span3(data-type="portraits")
           .thumbnail
-            img.lazy(src="/img/lazy.png", alt="", data-original='/images/#{type}/thumb_#{img}.jpg')
+            img.lazy(src="/img/lazy.png", alt="", data-original=imgUrl + '#{type}/thumb_#{img}.jpg')
             noscript
               // Degrade gracefully
-              img(src='/images/#{type}/thumb_#{img}.jpg', width="640", heigh="480")
+              img(src=imgUrl + '#{type}/thumb_#{img}.jpg', width="640", heigh="480")
             span.caption
               span.descr
                 span.title= info[lang]
@@ -21,6 +21,6 @@ block content
                 a(href= "#{linkPrefix}/#{type}/#{img}", data-title="#{info[lang]} / #{suffix}")
                   i.icon-link
                 a.lbox(
-                href="/images/#{type}/#{img}.jpg"
+                href=imgUrl + "#{type}/#{img}.jpg"
                 data-title="<p class='text-center'><b>#{info[lang]}</b><span>#{suffix}</span></p>")
                   i.icon-zoom-in
