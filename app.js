@@ -59,7 +59,6 @@ app.use(function (err, req, res, next) {
     text: text,
     lang: lang
   });
-
 });
 
 

@@ -54,14 +54,17 @@ router.get('/ru', function (req, res, next) {
  * @returns {{type: *, lang: *, text: {general: *, error: *}}}
  */
 function render(req, res, next, lang, category, type, image) {
+  var text = require('../lang/general')[lang];
   var config = {
     type: category,
     lang: lang,
     text: {
-      general: require('../lang/general')[lang]
+      general: text,
+      pageTitle: text.title
     },
     imgUrl: 'https://s3.eu-central-1.amazonaws.com/shevyakova.com.images/',
-    fbLang: (lang === 'ru') ? 'ru_RU' : 'en_US'
+    fbLang: (lang === 'ru') ? 'ru_RU' : 'en_US',
+    url: 'http://shevyakova.com' + req.url
   };
 
   // Get another lang page's url
@@ -74,11 +77,12 @@ function render(req, res, next, lang, category, type, image) {
     config.anotherLangUrl = req.url.substr(3) || '/';
   }
 
-  if (type === 'gallery') {
-    config.images = (category === 'graphic') ? require('../models/graphic') : require('../models/paintings');
-  } else {
+  config.images = (category === 'graphic') ? require('../models/graphic') : require('../models/paintings');
+
+  if (type !== 'gallery') {
     config.image = image;
-    config.info = require('../models/paintings')[image];
+    config.info = config.images[image];
+    config.text.pageTitle = '"' + config.info[lang] + '". ' + config.text.pageTitle;
     // Raise 404 if there is no image.
     if (!config.info) {
       var err = new Error('Not Found');

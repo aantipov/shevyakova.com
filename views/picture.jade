@@ -1,8 +1,5 @@
 extends layout
 
-block title
-//{{ Lang::get('general.alina') }}. "{{$title}}" {{$suffix}}
-
 block content
   - var suffix = (type === 'graphic') ? '' : text.general.oilOnCanvas + ' ' + info['dims'] + ' ' + info['year'];
   - var title = info[lang];
@@ -16,7 +13,7 @@ block content
       .img-wrapper.text-center.loading
         img(src=imgUrl + "#{type}/#{image}.jpg")
     .fb-like(
-    data-href="<?php echo URL::current(); ?>",
+    data-href="http://shevyakova.com",
     data-send="false",
     data-layout="button_count",
     data-width="450",
