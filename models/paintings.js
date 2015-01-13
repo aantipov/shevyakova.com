@@ -44,7 +44,14 @@ var items = {
     'with_bouquets': {dims: '', year: 2010, en: 'With bouquets', ru: 'С букетами'},
     'with_mirror': {dims: '', year: 2006, en: 'With mirror', ru: 'С зеркалом'},
     'flowers_on_green2': {dims: '72x77', year: 2014, en: 'Flowers on green 2', ru: 'Цветы на зеленом 2'},
-    'do_you_know_lida': {dims: '72x77', year: 2014, en: 'Do you know Lida', ru: 'Знаешь, Лида...'}
+    'do_you_know_lida': {dims: '72x77', year: 2014, en: 'Do you know Lida', ru: 'Знаешь, Лида...'},
+    'bouquets': {dims: '82x72', year: 2014, en: 'Bouquets', ru: 'Букеты'},
+    'flower_girl_on_green': {dims: '90x80', year: 2014, en: 'Flower-girl on green', ru: 'Цветочница на зеленом'},
+    'lida_on_black': {dims: '84x94', year: 2014, en: 'Lida on black', ru: 'Лида на черном'},
+    'lida_on_red': {dims: '50x70', year: 2014, en: 'Lida on red', ru: 'Лида на красном'},
+    'lida_walking': {dims: '50x70', year: 2014, en: 'Lida walking', ru: 'Лида на прогулке'},
+    'stillife': {dims: '70x70', year: 2014, en: 'Stillife', ru: 'Натюрморт'},
+    'winter_stillife': {dims: '75x75', year: 2014, en: 'Winter stillife', ru: 'Зимний натюрморт'}
 };
 
 module.exports = items; 

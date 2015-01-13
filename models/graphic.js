@@ -49,7 +49,27 @@ var items = {
     'with_mirror': {en: 'With mirror', ru: 'С зеркалом'},
     'with_mirror2': {en: 'With mirror 2', ru: 'С зеркалом 2'},
     'with_mirror3': {en: 'With mirror 3', ru: 'С зеркалом 3'},
-    'with_mirror4': {en: 'With mirror 4', ru: 'С зеркалом 4'}
+    'with_mirror4': {en: 'With mirror 4', ru: 'С зеркалом 4'},
+    'lida_1': {en: 'Lida 1', ru: 'Лида 1'},
+    'lida_2': {en: 'Lida 2', ru: 'Лида 2'},
+    'lida_3': {en: 'Lida 3', ru: 'Лида 3'},
+    'lida_4': {en: 'Lida 4', ru: 'Лида 4'},
+    'lida_5': {en: 'Lida 5', ru: 'Лида 5'},
+    'lida_6': {en: 'Lida 6', ru: 'Лида 6'},
+    'lida_7': {en: 'Lida 7', ru: 'Лида 7'},
+    'lida_8': {en: 'Lida 8', ru: 'Лида 8'},
+    'lida_9': {en: 'Lida 9', ru: 'Лида 9'},
+    'lida_10': {en: 'Lida 10', ru: 'Лида 10'},
+    'lida_11': {en: 'Lida 11', ru: 'Лида 11'},
+    'lida_12': {en: 'Lida 12', ru: 'Лида 12'},
+    'lida_13': {en: 'Lida 13', ru: 'Лида 13'},
+    'lida_14': {en: 'Lida 14', ru: 'Лида 14'},
+    'lida_15': {en: 'Lida 15', ru: 'Лида 15'},
+    'lida_16': {en: 'Lida 16', ru: 'Лида 16'},
+    'lida_17': {en: 'Lida 17', ru: 'Лида 17'},
+    'lida_18': {en: 'Lida 18', ru: 'Лида 18'},
+    'lida_19': {en: 'Lida 19', ru: 'Лида 19'},
+    'olga': {en: 'Olga', ru: 'Ольга'}
 };
 
 module.exports = items;
