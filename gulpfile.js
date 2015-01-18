@@ -19,8 +19,14 @@ gulp.task('js', function () {
 });
 
 gulp.task('css', function () {
-    gulp.src(['assets/css/bootstrap.min.css', 'assets/css/bootstrap-responsive.min.css', 'shadowbox/shadowbox.css', 'assets/css/*.css'])
+    gulp.src([
+        'public/css/bootstrap.min.css',
+        'public/css/bootstrap-responsive.min.css',
+        'public/css/font-awesome.css',
+        'public/js/shadowbox/shadowbox.css',
+        'public/css/style.css'
+    ])
         .pipe(concatCss('style.css'))
-        //.pipe(minifyCSS())
+        .pipe(minifyCSS())
         .pipe(gulp.dest('public'));
 });

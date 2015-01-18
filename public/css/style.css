@@ -1,7 +1,7 @@
 /* General Styles */
 
 body {
-    background: url(../img/bg.jpg);
+    background: url('http://shevyakova.com/img/bg.jpg');
     padding-top: 100px;
 }
 
@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .masthead {
-    background: url(../img/headerbg.jpg);
+    background: url('http://shevyakova.com/img/headerbg.jpg');
     position: fixed;
     top: 0;
     left: 0;
@@ -91,7 +91,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: all 0.5s ease-in-out;
 }
 
-.thumbnails li .thumbnail:hover .caption {;
+.thumbnails li .thumbnail:hover .caption {
     opacity: 0.8;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
@@ -363,7 +363,7 @@ html, body {
     width: 270px;
     height: 320px;
     margin: 0 auto;
-    background: #BBBBBD url('../img/ajax-loader.gif') 50% 45% no-repeat;
+    background: #BBBBBD url('http://shevyakova.com/img/ajax-loader.gif') 50% 45% no-repeat;
 }
 #picture-wrapper noscript .img-wrapper {
     display: block;
@@ -400,7 +400,7 @@ html, body {
 .flag img {
     width: 25px;
     height: 15px;
-    background: url(../img/flags.png) no-repeat;
+    background: url('http://shevyakova.com/img/flags.png') no-repeat;
 }
 
 .flag.flag-ru img {
