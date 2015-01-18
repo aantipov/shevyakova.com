@@ -20,7 +20,7 @@ var items = {
     /*'figure_on_dark': {dims: '', year: 2005, en: 'Figure on dark', ru: 'Фигура на темном фоне'},*/
     /*'figure_on_grass': {dims: '', year: 2004, en: 'Figure on grass', ru: 'Фигура на траве'},*/
     'figure_on_white': {dims: '', year: 2007, en: 'Figure on white', ru: 'Фигура на белом'},
-    'flowers_on_blue': {dims: '', year: 2013, en: 'Flowers on blue', ru: 'Цветы на синем'},
+    //'flowers_on_blue': {dims: '', year: 2013, en: 'Flowers on blue', ru: 'Цветы на синем'},
     'flowers_on_green': {dims: '', year: 2013, en: 'Flowers on green', ru: 'Цветы на зеленом'},
     'flowers_on_red': {dims: '', year: 2008, en: 'Flowers on red', ru: 'Цветы на красном'},
     'lida': {dims: '', year: 2007, en: 'Lida', ru: 'Лида'},
