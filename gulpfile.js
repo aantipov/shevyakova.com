@@ -11,6 +11,8 @@ var concatCss = require('gulp-concat-css');
 var uglify = require('gulp-uglify');
 var minifyCSS = require('gulp-minify-css');
 var less = require('gulp-less');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer-core');
 
 gulp.task('js', function () {
     gulp.src(['assets/js/shadowbox.js', 'assets/js/*.js'])
@@ -31,6 +33,7 @@ gulp.task('css', ['less'], function () {
         'public/js/shadowbox/shadowbox.css'
     ])
         .pipe(concatCss('style.css'))
+        .pipe(postcss([autoprefixer({browsers: ['last 2 version']})]))
         .pipe(minifyCSS())
         .pipe(gulp.dest('public'));
 });

@@ -31,8 +31,11 @@ html(lang='en')
                             img(src="/img/empty.gif", alt="country flag")
             #main.container
                 .navlinks.clearfix.text-center
-                    a(class=(type === 'painting' ? 'active' : ''), href=(lang === 'ru' ? '/' : '/en'))= text.general.painting
-                    a(class=(type === 'graphic' ? 'active' : ''), href=(lang === 'ru' ? '/graphic' : '/en/graphic'))= text.general.graphic
+                    .row
+                        .col-md-6
+                            a(class=(type === 'painting' ? 'active' : ''), href=(lang === 'ru' ? '/' : '/en'))= text.general.painting
+                        .col-md-6
+                            a(class=(type === 'graphic' ? 'active' : ''), href=(lang === 'ru' ? '/graphic' : '/en/graphic'))= text.general.graphic
                 block content
 
         footer.footer.text-center
