@@ -10,6 +10,7 @@ var concat = require('gulp-concat');
 var concatCss = require('gulp-concat-css');
 var uglify = require('gulp-uglify');
 var minifyCSS = require('gulp-minify-css');
+var less = require('gulp-less');
 
 gulp.task('js', function () {
     gulp.src(['assets/js/shadowbox.js', 'assets/js/*.js'])
@@ -18,15 +19,24 @@ gulp.task('js', function () {
         .pipe(gulp.dest('public/'));
 });
 
-gulp.task('css', function () {
+gulp.task('less', function () {
+    return gulp.src('assets/less/bootstrap.less')
+        .pipe(less())
+        .pipe(gulp.dest('.tmp'));
+});
+
+gulp.task('css', ['less'], function () {
     gulp.src([
-        'public/css/bootstrap.min.css',
-        'public/css/bootstrap-responsive.min.css',
-        'public/css/font-awesome.css',
-        'public/js/shadowbox/shadowbox.css',
-        'public/css/style.css'
+        '.tmp/bootstrap.css',
+        'public/js/shadowbox/shadowbox.css'
     ])
         .pipe(concatCss('style.css'))
         .pipe(minifyCSS())
         .pipe(gulp.dest('public'));
 });
+
+gulp.task('default', function () {
+    gulp.watch('assets/less/*.less', ['css']);
+});
+
+
