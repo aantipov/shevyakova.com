@@ -33,8 +33,7 @@ gulp.task('less', function () {
 
 gulp.task('css', ['less'], function () {
     gulp.src([
-        '.tmp/bootstrap.css',
-        'public/js/shadowbox/shadowbox.css'
+        '.tmp/bootstrap.css'
     ])
         .pipe(concatCss('style.css'))
         .pipe(postcss([autoprefixer({browsers: ['last 2 version']})]))
