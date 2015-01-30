@@ -1,0 +1,22 @@
+{
+  "name": "shevyakova.com",
+  "version": "0.0.1",
+  "homepage": "https://github.com/aantipov/shevyakova.com",
+  "authors": [
+    "Alexei Antipov <antipov.alexei@gmail.com>"
+  ],
+  "description": "Alina Shevyakova personal website",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery.lazyload": "~1.9.3",
+    "magnific-popup": "~1.0.0"
+  }
+}
