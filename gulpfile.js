@@ -15,7 +15,11 @@ var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer-core');
 
 gulp.task('js', function () {
-    gulp.src(['assets/js/shadowbox.js', 'assets/js/*.js'])
+    gulp.src([
+        'bower_components/jquery.lazyload/jquery.lazyload.js',
+        'bower_components/magnific-popup/dist/jquery.magnific-popup.js',
+        'assets/js/script.js'
+    ])
         .pipe(concat('scripts.js'))
         .pipe(uglify())
         .pipe(gulp.dest('public/'));
