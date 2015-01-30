@@ -33,7 +33,8 @@ gulp.task('less', function () {
 
 gulp.task('css', ['less'], function () {
     gulp.src([
-        '.tmp/bootstrap.css'
+        '.tmp/bootstrap.css',
+        '.bower_components/magnific-popup/dist/magnific-popup.css'
     ])
         .pipe(concatCss('style.css'))
         .pipe(postcss([autoprefixer({browsers: ['last 2 version']})]))
