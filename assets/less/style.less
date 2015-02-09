@@ -11,6 +11,7 @@
     margin: 0;
   }
   .caption {
+    z-index: 100;
     background: #222;
     padding: 0;
     width: 100%;
@@ -24,29 +25,6 @@
     outline: 0 none;
     font-size: 15px;
     text-decoration: none;
-    .links {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      a {
-        font-size: 40px;
-        display: inline-block;
-        width: 50%;
-        height: 60px;
-        text-align: center;
-        color: #EEE;
-        background-color: #4cae4c;
-        opacity: 1;
-        transition:  0.4s ease-in-out;
-        &:hover {
-          background-color: #3d813d;
-          color: rgba(251, 191, 58, 0.64);
-        }
-      }
-      .lens {
-        border-left: 1px solid #ffffff;;
-      }
-    }
     .descr {
       position: relative;
       top: 15%;
@@ -59,9 +37,39 @@
       }
     }
   }
-  &:hover .caption {
-    opacity: 0.8;
+  .links {
+    z-index: 101;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    opacity: 0;
     transition: all 0.5s ease-in-out;
+    a {
+      font-size: 40px;
+      display: inline-block;
+      width: 50%;
+      height: 60px;
+      text-align: center;
+      color: #EEE;
+      background-color: #4cae4c;
+      opacity: 1;
+      transition: 0.2s ease-in-out;
+      &:hover {
+        background-color: #3d813d;
+        color: rgba(251, 191, 58, 0.64);
+      }
+    }
+    .lens {
+      border-left: 1px solid #ffffff;;
+    }
+  }
+  &:hover {
+    .caption {
+      opacity: 0.8;
+    }
+    .links {
+      opacity: 1;
+    }
   }
 }
 
