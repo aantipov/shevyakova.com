@@ -24,9 +24,15 @@ html(lang='en')
 					.page-header
 						h1= text.general.alina
 				.col-md-6
-					.pull-right FB
-					span.glyphicon.glyphicon-search
-					i.fa.fa-search-plus
+					.socials.pull-right
+						//- TODO: Add language-switcher
+						a(href="https://www.facebook.com/alinashevyakova")
+							i.fa.fa-facebook
+						a(href="mailto:ashevyakova@gmail.com")
+							i.fa.fa-envelope
+					.pull-right
+						a(class="flag flag-" + (lang === 'ru' ? 'en' : 'ru'), href=anotherLangUrl)
+							img(src="/img/empty.gif", alt="country flag")
 			.row
 				nav
 					.col-md-2.col-md-offset-4
@@ -34,27 +40,6 @@ html(lang='en')
 					.col-md-5.col-md-offset-1
 						a(class=(type === 'graphic' ? 'active' : ''), href=(lang === 'ru' ? '/graphic' : '/en/graphic'))= text.general.graphic
 			block content
-
-		div.container.hide
-			.masthead.clearfix
-				.container
-					.logo.pull-left= text.general.alina
-					.socials.pull-right
-						a(href="https://www.facebook.com/alinashevyakova")
-							i.icon-facebook
-						a(href="mailto:ashevyakova@gmail.com")
-							i.icon-envelope
-					.pull-right
-						a(class="flag flag-" + (lang === 'ru' ? 'en' : 'ru'), href=anotherLangUrl)
-							img(src="/img/empty.gif", alt="country flag")
-			#main.container
-				.navlinks.clearfix.text-center
-					.row
-						.col-md-6
-							a(class=(type === 'painting' ? 'active' : ''), href=(lang === 'ru' ? '/' : '/en'))= text.general.painting
-						.col-md-6
-							a(class=(type === 'graphic' ? 'active' : ''), href=(lang === 'ru' ? '/graphic' : '/en/graphic'))= text.general.graphic
-				block content
 
 		footer.footer.text-center
 			p Created by
@@ -64,7 +49,7 @@ html(lang='en')
 		script(src="/scripts.js")
 		// Facebook Like button
 		#fb-root
-		script.
+		script(type="text/templ").
 			(function (d, s, id) {
 				var js, fjs = d.getElementsByTagName(s)[0];
 				if (d.getElementById(id)) return;
