@@ -1,25 +1,22 @@
 extends layout
 
 block content
-	div#gallery-wrapper.row
-		each info, img in images
-			- var suffix = (type === 'graphic') ? '' : text.general.oilOnCanvas + ' ' + info.dims + ' ' + info.year;
-			- var linkPrefix = (lang === 'en') ? '/en': '';
-			div.col-md-3.col-sm-4
-				.thumbnail
-					a(href= "#{linkPrefix}/#{type}/#{img}", data-title="#{info[lang]} / #{suffix}")
-						img.lazy(src="/img/lazy.png", alt="", data-original=imgUrl + '#{type}/thumb_#{img}.jpg')
-					noscript
-						// Degrade gracefully
-						img(src=imgUrl + '#{type}/thumb_#{img}.jpg', width="640", heigh="480")
-					.caption
-						.descr
-							p.title= info[lang]
-							p= suffix
-					.links
-						a(href= "#{linkPrefix}/#{type}/#{img}", data-title="#{info[lang]} / #{suffix}")
-							i.fa.fa-link
-						a.lens(
-						href=imgUrl + "#{type}/#{img}.jpg"
-						data-title="<p class='text-center'><b>#{info[lang]}</b><span>#{suffix}</span></p>")
-							i.fa.fa-search-plus
+  div#gallery-wrapper.row
+    each info, img in images
+      - var suffix = (type === 'graphic') ? '' : text.general.oilOnCanvas + ' ' + info.dims + ' ' + info.year;
+      - var linkPrefix = (lang === 'en') ? '/en': '';
+      div.col-md-4.col-sm-6
+        .thumb
+          a(href= "#{linkPrefix}/#{type}/#{img}", data-title="#{info[lang]} / #{suffix}")
+            img.lazy(src="/img/lazy.png", alt="", data-original=imgUrl + '#{type}/thumb_#{img}.jpg')
+          noscript
+            // Degrade gracefully
+            img(src=imgUrl + '#{type}/thumb_#{img}.jpg', width="640", heigh="480")
+          .cover(
+          href=imgUrl + "#{type}/#{img}.jpg"
+          data-title="<p class='text-center'><b>#{info[lang]}</b><span>#{suffix}</span></p>")
+            .caption
+              a(href= "#{linkPrefix}/#{type}/#{img}", data-title="#{info[lang]} / #{suffix}").title= info[lang]
+              p= suffix
+            .icon
+              i.fa.fa-search-plus

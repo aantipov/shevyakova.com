@@ -34,80 +34,40 @@ nav {
 
 /* Thumbnails */
 
-.thumbnail {
-  border: none;
-  padding: 0;
+.thumb {
   margin-bottom: 14px;
-  border-radius: 0;
-  box-shadow: none;
   position: relative;
+  overflow: hidden;
+
   img {
+    width: 100%;
     margin: 0;
   }
-  &>a {
-    display: inline-block;    &:hover {
-      cursor: context-menu;
-    }
-  }
-  .caption {
-    z-index: 100;
-    background: #222;
-    padding: 0;
+  .cover {
+    position: absolute;
+    background: #000000;
     width: 100%;
     height: 100%;
-    position: absolute;
+    top: 0;
     left: 0;
-    bottom: 0;
+    cursor: pointer;
+    text-align: center;
     opacity: 0;
     transition: all 0.5s ease-in-out;
-    overflow: hidden;
-    outline: 0 none;
-    font-size: 15px;
-    text-decoration: none;
-    .descr {
-      position: relative;
-      top: 15%;
-      text-align: center;
-      margin: 0 auto;
-      line-height: 1.5;
-      color: #FBBF3A;
-      .title {
-        font-size: 120%;
-      }
-    }
-  }
-  .links {
-    z-index: 101;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    opacity: 0;
-    transition: all 0.5s ease-in-out;
-    a {
-      font-size: 40px;
-      display: inline-block;
-      width: 50%;
-      height: 60px;
-      text-align: center;
-      color: #EEE;
-      background-color: #4cae4c;
-      opacity: 1;
-      transition: 0.2s ease-in-out;
-      &:hover {
-        background-color: #3d813d;
-        color: rgba(251, 191, 58, 0.64);
-      }
-    }
-    .lens {
-      border-left: 1px solid #ffffff;;
-    }
-  }
-  &:hover {
-    .caption {
+    &:hover {
       opacity: 0.8;
     }
-    .links {
-      opacity: 1;
+    .caption {
+      padding-top: 15%;
+      color: #ABABAB;
+      a.title {
+        color: #FBBF3A;
+        font-size: 140%;
+      }
+    }
+    .icon {
+      padding-top: 5%;
+      font-size: 50px;
     }
   }
 }

@@ -23,3 +23,5 @@ Thumbs.db
 
 /public/style.css
 /public/scripts.js
+
+/bower_components

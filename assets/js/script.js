@@ -1,8 +1,12 @@
 'use strict';
 (function ($) {
   $(document).ready(function () {
+    $('.caption a').on('click', function (ev) {
+      // Stop propagation to forbid popup appearance.
+      ev.stopPropagation();
+    });
     if ($('#gallery-wrapper').length) {
-      $('a.lens').magnificPopup({
+      $('.cover').magnificPopup({
         type: 'image',
         gallery: {
           enabled: true
