@@ -5,7 +5,7 @@ block content
     each info, img in images
       - var suffix = (type === 'graphic') ? '' : text.general.oilOnCanvas + ' ' + info.dims + ' ' + info.year;
       - var linkPrefix = (lang === 'en') ? '/en': '';
-      div.col-md-4.col-sm-6
+      div.col-md-4.col-sm-6.col-xs-10.col-xs-offset-1.col-sm-offset-0
         .thumb
           a(href= "#{linkPrefix}/#{type}/#{img}", data-title="#{info[lang]} / #{suffix}")
             img.lazy(src="/img/lazy.png", alt="", data-original=imgUrl + '#{type}/thumb_#{img}.jpg')
