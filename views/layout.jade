@@ -1,89 +1,89 @@
 doctype html
 html(lang='en')
-	head
-		link(href='http://fonts.googleapis.com/css?family=Roboto+Condensed&subset=latin,cyrillic' rel='stylesheet' type='text/css')
-		link(href='http://fonts.googleapis.com/css?family=Roboto&subset=latin,cyrillic' rel='stylesheet' type='text/css')
-		meta(charset="utf-8")
-		title= text.pageTitle
-		meta(name="viewport", content="width=device-width, initial-scale=1.0")
-		meta(name="copyright", content= text.general.copyright)
-		meta(name="description", content= text.general.description)
-		meta(name="keywords", content= text.general.keywords)
-		meta(name="author", content="Alexei Antipov")
+  head
+    link(href='http://fonts.googleapis.com/css?family=Roboto+Condensed&subset=latin,cyrillic' rel='stylesheet' type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Roboto&subset=latin,cyrillic' rel='stylesheet' type='text/css')
+    meta(charset="utf-8")
+    title= text.pageTitle
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="copyright", content= text.general.copyright)
+    meta(name="description", content= text.general.description)
+    meta(name="keywords", content= text.general.keywords)
+    meta(name="author", content="Alexei Antipov")
 
-		//  FB analytics
-		//<meta property="fb:admins" content="100001046469364"/>
+    //  FB analytics
+    //<meta property="fb:admins" content="100001046469364"/>
 
-		link(href="/style.css", rel="stylesheet")
-		link(href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", rel="stylesheet")
+    link(href="/style.css", rel="stylesheet")
+    link(href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", rel="stylesheet")
 
-		link(rel="shortcut icon", type="image/x-icon", href="/favicon.ico")
-		link(rel="icon", type="image/x-icon", href="/favicon.ico")
-	body
-		div.container
-			.row
-				.col-md-6
-					.page-header
-						h1= text.general.alina
-				.col-md-6
-					.socials.pull-right
-						//- TODO: Add language-switcher
-						a(href="https://www.facebook.com/alinashevyakova")
-							i.fa.fa-facebook
-						a(href="mailto:ashevyakova@gmail.com")
-							i.fa.fa-envelope
-					.pull-right
-						a(class="flag flag-" + (lang === 'ru' ? 'en' : 'ru'), href=anotherLangUrl)
-							img(src="/img/empty.gif", alt="country flag")
-			.row
-				nav
-					.col-md-2.col-md-offset-4
-						a(class=(type === 'painting' ? 'active' : ''), href=(lang === 'ru' ? '/' : '/en'))= text.general.painting
-					.col-md-5.col-md-offset-1
-						a(class=(type === 'graphic' ? 'active' : ''), href=(lang === 'ru' ? '/graphic' : '/en/graphic'))= text.general.graphic
-			block content
+    link(rel="shortcut icon", type="image/x-icon", href="/favicon.ico")
+    link(rel="icon", type="image/x-icon", href="/favicon.ico")
+  body
+    div.container
+      .row
+        .col-md-6
+          .page-header
+            h1= text.general.alina
+        .col-md-6
+          .socials.pull-right
+            //- TODO: Add language-switcher
+            a(href="https://www.facebook.com/alinashevyakova")
+              i.fa.fa-facebook
+            a(href="mailto:ashevyakova@gmail.com")
+              i.fa.fa-envelope
+          .pull-right
+            a(class="flag flag-" + (lang === 'ru' ? 'en' : 'ru'), href=anotherLangUrl)
+              img(src="/img/empty.gif", alt="country flag")
+      nav
+        .row
+          .col-sm-4.col-sm-offset-2.col-md-3.col-md-offset-3.text-center
+            a(class=(type === 'painting' ? 'active' : ''), href=(lang === 'ru' ? '/' : '/en'))= text.general.painting
+          .col-sm-4.col-md-3.text-center
+            a(class=(type === 'graphic' ? 'active' : ''), href=(lang === 'ru' ? '/graphic' : '/en/graphic'))= text.general.graphic
+      block content
 
-		footer.footer.text-center
-			p Created by
-				a(href="http://alexei.me/")  Alexei Antipov
+    footer.footer.text-center
+      p Created by
+        a(href="http://alexei.me/")  Alexei Antipov
 
-		script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
-		script(src="/scripts.js")
-		// Facebook Like button
-		#fb-root
-		script(type="text/templ").
-			(function (d, s, id) {
-				var js, fjs = d.getElementsByTagName(s)[0];
-				if (d.getElementById(id)) return;
-				js = d.createElement(s);
-				js.id = id;
-				js.src = "//connect.facebook.net/#{fbLang}/all.js#xfbml=1";
-				fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
+    script(src="/scripts.js")
+    // Facebook Like button
+    #fb-root
+    script(type="text/templ").
+      (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "//connect.facebook.net/#{fbLang}/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
 
-		// Yandex.Metrika
-		script(src='//mc.yandex.ru/metrika/watch.js')
-		script.
-			try {
-				var yaCounter753383 = new Ya.Metrika(753383);
-			} catch (e) {
-			}
-		noscript
-			img(src='//mc.yandex.ru/watch/753383', style='position:absolute', alt='')
-		// /Yandex.Metrika
+    // Yandex.Metrika
+    script(src='//mc.yandex.ru/metrika/watch.js')
+    script.
+      try {
+        var yaCounter753383 = new Ya.Metrika(753383);
+      } catch (e) {
+      }
+    noscript
+      img(src='//mc.yandex.ru/watch/753383', style='position:absolute', alt='')
+    // /Yandex.Metrika
 
-		// Google.Metrika
-		script.
-			(function (i, s, o, g, r, a, m) {
-				i['GoogleAnalyticsObject'] = r;
-				i[r] = i[r] || function () {
-					(i[r].q = i[r].q || []).push(arguments)
-				}, i[r].l = 1 * new Date();
-				a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-				a.async = 1;
-				a.src = g;
-				m.parentNode.insertBefore(a, m)
-			})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-			ga('create', 'UA-41512126-1', 'shevyakova.com');
-			ga('send', 'pageview');
-		// /Google.Metrika
+    // Google.Metrika
+    script.
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-41512126-1', 'shevyakova.com');
+      ga('send', 'pageview');
+    // /Google.Metrika
