@@ -22,19 +22,17 @@ html(lang='en')
   body
     div.container
       .row
-        .col-md-6
+        .col-md-6.col-lg-5
           .page-header
             h1= text.general.alina
-        .col-md-6
-          .socials.pull-right
-            //- TODO: Add language-switcher
-            a(href="https://www.facebook.com/alinashevyakova")
-              i.fa.fa-facebook
-            a(href="mailto:ashevyakova@gmail.com")
-              i.fa.fa-envelope
-          .pull-right
-            a(class="flag flag-" + (lang === 'ru' ? 'en' : 'ru'), href=anotherLangUrl)
-              img(src="/img/empty.gif", alt="country flag")
+        .col-md-3.col-md-offset-3.col-lg-offset-4.text-center.icons
+          a.flag(href=anotherLangUrl)
+            i.fa.fa-flag-o
+            span=(lang === 'ru' ? 'en' : 'rus')
+          a(href="https://www.facebook.com/alinashevyakova")
+            i.fa.fa-facebook
+          a(href="mailto:ashevyakova@gmail.com")
+            i.fa.fa-envelope
       nav
         .row
           .col-sm-4.col-sm-offset-2.col-md-3.col-md-offset-3.text-center
