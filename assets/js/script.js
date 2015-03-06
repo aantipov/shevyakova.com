@@ -9,7 +9,8 @@
       $('.cover').magnificPopup({
         type: 'image',
         gallery: {
-          enabled: true
+          enabled: true,
+          arrowMarkup: '<i class="fa fa-arrow-circle-%dir%"></i>'
         },
         image: {
           // options for image content type
