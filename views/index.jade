@@ -14,7 +14,7 @@ block content
             img(src=imgUrl + '#{type}/thumb_#{img}.jpg', width="640", heigh="480")
           .cover(
           href=imgUrl + "#{type}/#{img}.jpg"
-          data-title="<p class='text-center'><b>#{info[lang]}</b><span>#{suffix}</span></p>")
+          data-title="<span class=\"title\">#{info[lang]}</span><span class=\"suffix\">  #{suffix}</span>")
             .caption
               a(href= "#{linkPrefix}/#{type}/#{img}", data-title="#{info[lang]} / #{suffix}").title= info[lang]
               p= suffix

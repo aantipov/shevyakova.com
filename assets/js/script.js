@@ -14,7 +14,15 @@
         },
         image: {
           // options for image content type
-          titleSrc: 'data-title'
+          titleSrc: 'data-title',
+          markup: '<div class="mfp-figure">' +
+          '<div class="mfp-title"></div>' +
+          '<div class="mfp-img"></div>' +
+          '<div class="mfp-bottom-bar">' +
+          '<div class="mfp-close"></div>' +
+          '<div class="mfp-counter"></div>' +
+          '</div>' +
+          '</div>'
         },
         mainClass: 'mfp-with-zoom', // this class is for CSS animation below
         zoom: {

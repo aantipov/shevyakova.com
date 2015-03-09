@@ -93,6 +93,8 @@ nav {
 /* Gallery arrows */
 
 .mfp-container {
+  min-width: 300px;
+
   .fa-arrow-circle-left, .fa-arrow-circle-right {
     position: absolute;
     top: 48%;
@@ -111,6 +113,42 @@ nav {
   .fa-arrow-circle-right {
     right: 0;
     margin-right: 20px;
+  }
+
+  .mfp-title {
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    padding: 0;
+    line-height: 40px;
+    color: #ABABAB;
+    span.title {
+      font-weight: 500;
+    }
+    span.suffix {
+      font-size: 15px;
+    }
+  }
+
+  img.mfp-img {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .mfp-bottom-bar {
+    .mfp-close {
+      position: fixed;
+      right: 20px;
+      top: 5px;
+      width: 20px
+    }
+    .mfp-counter {
+      position: fixed;
+      left: 10px;
+      top: 5px;
+      font-size: 15px;
+    }
   }
 }
 
