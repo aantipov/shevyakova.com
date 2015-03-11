@@ -12,7 +12,7 @@
 @gray-dark:              lighten(@gray-base, 20%);   // #333
 @gray:                   lighten(@gray-base, 33.5%); // #555
 @gray-light:             lighten(@gray-base, 46.7%); // #777
-@gray-lighter:           lighten(@gray-base, 93.5%); // #eee
+@gray-lighter:           lighten(@gray-base, 78.5%); // #eee
 
 @brand-primary:         darken(#428bca, 6.5%); // #337ab7
 @brand-success:         #5cb85c;
@@ -26,14 +26,14 @@
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               #fff;
+@body-bg:               #202020;
 //** Global text color on `<body>`.
-@text-color:            @gray-dark;
+@text-color:            @gray-light;
 
 //** Global textual link color.
-@link-color:            @brand-primary;
+@link-color:            @gray-lighter;
 //** Link hover color set via `darken()` function.
-@link-hover-color:      darken(@link-color, 15%);
+@link-hover-color:      @brand-warning;
 //** Link hover decoration.
 @link-hover-decoration: underline;
 
@@ -52,7 +52,7 @@
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
 @font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
 
-@font-size-h1:            floor((@font-size-base * 2.6)); // ~36px
+@font-size-h1:            floor((@font-size-base * 2.46)); // ~34px
 @font-size-h2:            floor((@font-size-base * 2.15)); // ~30px
 @font-size-h3:            ceil((@font-size-base * 1.7)); // ~24px
 @font-size-h4:            ceil((@font-size-base * 1.25)); // ~18px

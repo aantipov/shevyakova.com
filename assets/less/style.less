@@ -1,36 +1,39 @@
+@font-size-logo: ceil((@font-size-base * 3.8));  // ~54px
+
 body {
-  background: #202020 url('/img/dark_wall.png') repeat 0 0;
+  background-image: url('/img/dark_wall.png');
+  background-repeat: repeat;
+  background-position: 0 0;
   font-family: 'Roboto', sans-serif;
   min-width: 300px;
 }
 
-h1 {
-  font-family: 'Roboto Condensed', sans-serif;
-  font-size: 48px;
-  text-transform: uppercase;
+a {
+  text-decoration: none;
+  font-weight: 300;
+  &:hover {
+    text-decoration: none;
+    font-weight: 500;
+  }
 }
 
-.page-header {
-  margin-top: 20px;
-  color: #ABABAB;
+header {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: @font-size-logo;
+  text-transform: uppercase;
+  border-bottom: 2px solid @gray-light;
+  line-height: @headings-line-height;
+  margin-top: 10px;
 }
 
 nav {
-  margin-bottom: 30px;
-  a {
-    text-decoration: none;
-    font-size: 240%;
-    color: rgba(73, 73, 73, 0.89);
-    text-transform: lowercase;
-    &.active {
-      color: #ABABAB;
-    }
-    &:hover {
-      color: #ABABAB;
-    }
-    &:nth-child(2) {
-      margin-left: 2em;
-    }
+  margin: 20px 0 30px;
+  h1, a {
+    font-size: @font-size-h1;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    line-height: @line-height-base;
   }
 }
 
@@ -62,15 +65,19 @@ nav {
     }
     .caption {
       padding-top: 15%;
-      color: #ABABAB;
       a.title {
-        color: #FBBF3A;
-        font-size: 140%;
+        font-size: @font-size-h3;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+      p {
+        font-size: ceil(@font-size-h3/1.6);
       }
     }
     .icon {
       padding-top: 5%;
-      font-size: 50px;
+      font-size: ceil(@font-size-base*4);
     }
   }
 }
@@ -81,10 +88,8 @@ nav {
   margin-top: 20px;
   a {
     font-size: 30px;
-    color: #ABABAB;
     padding: 0 10px;
     &:hover {
-      color: #FBBF3A;
       text-decoration: none;
     }
   }
