@@ -41,7 +41,7 @@ html(lang='en')
               a(href=(lang === 'ru' ? '/' : '/en'))= text.general.painting
           .col-sm-4.col-md-3.text-center
             if type === 'graphic'
-              span= text.general.graphic
+              h1= text.general.graphic
             else
               a(href=(lang === 'ru' ? '/graphic' : '/en/graphic'))= text.general.graphic
       block content
