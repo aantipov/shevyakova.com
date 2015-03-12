@@ -28,6 +28,32 @@ header {
   margin-top: 10px;
 }
 
+/*​ Icons */
+
+.icons {
+  text-align: center;
+  margin-top: 20px;
+  a {
+    display: inline-block;
+    font-size: @font-size-h1;
+    &:hover {
+      text-decoration: none;
+    }
+    text-align: center;
+  }
+  a.flag {
+    width: 100px;
+  }
+  a.fb {
+    width: 70px;
+  }
+  a.mail {
+    width: 70px;
+  }
+}
+
+/* Navigation */
+
 nav {
   margin: 20px 0 30px;
   h1, a {
@@ -51,15 +77,14 @@ nav {
   max-width: 270px;
 
   img {
-    width: 100%;
+    max-width: 100%;
     margin: 0;
     background-color: @gray-light;
   }
 
   img.lazy {
-    width: 270px;
     height: 310px;
-    display: none;// Hide it if js is turned off.
+    display: none; // Hide it if js is turned off.
   }
 
   .cover {
@@ -88,19 +113,6 @@ nav {
     .icon {
       padding-top: 5%;
       font-size: ceil(@font-size-base*4);
-    }
-  }
-}
-
-/*​ Icons */
-
-.icons {
-  margin-top: 20px;
-  a {
-    font-size: 30px;
-    padding: 0 10px;
-    &:hover {
-      text-decoration: none;
     }
   }
 }

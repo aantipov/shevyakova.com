@@ -24,13 +24,13 @@ html(lang='en')
       .row
         .col-md-6.col-lg-5
           header= text.general.alina
-        .col-md-3.col-md-offset-3.col-lg-offset-4.text-center.icons
+        .col-lg-3.col-md-4.col-md-offset-2.col-lg-offset-4.icons
           a.flag(href=anotherLangUrl)
             i.fa.fa-flag-o
             span=(lang === 'ru' ? 'en' : 'rus')
-          a(href="https://www.facebook.com/alinashevyakova")
+          a.fb(href="https://www.facebook.com/alinashevyakova")
             i.fa.fa-facebook
-          a(href="mailto:ashevyakova@gmail.com")
+          a.mail(href="mailto:ashevyakova@gmail.com")
             i.fa.fa-envelope
       nav
         .row
