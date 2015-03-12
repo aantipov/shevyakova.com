@@ -38,7 +38,7 @@ gulp.task('css', ['less'], function () {
   ])
     .pipe(concatCss('style.css'))
     .pipe(postcss([autoprefixer({browsers: ['last 2 version']})]))
-    //.pipe(minifyCSS())
+    .pipe(minifyCSS())
     .pipe(gulp.dest('public'));
 });
 
