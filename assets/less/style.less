@@ -1,6 +1,6 @@
-@font-size-logo: ceil((@font-size-base * 3.6)); // ~54px
-@spinner-size: ceil((@font-size-base * 3.6)); // ~54px
-@light-font-weight: 300; // normal - 400
+@font-size-logo: ceil((@font-size-base * 3.6));  // ~54px
+@spinner-size: ceil((@font-size-base * 3.6));  // ~54px
+@light-font-weight: 300;  // normal - 400
 
 body {
   background-image: url('/img/dark_wall.png');
@@ -55,6 +55,13 @@ nav {
     margin: 0;
     background-color: @gray-light;
   }
+
+  img.lazy {
+    width: 270px;
+    height: 310px;
+    display: none;// Hide it if js is turned off.
+  }
+
   .cover {
     position: absolute;
     background: #000000;
@@ -342,10 +349,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #FBBF3A;
 }
 
-img.lazy {
-  width: 270px;
-  display: none;
-}*/
+*/
 
 /*
 
