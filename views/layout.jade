@@ -35,15 +35,19 @@ html(lang='en')
       nav
         .row
           .col-sm-4.col-sm-offset-2.col-md-3.col-md-offset-3.text-center
-            if type === 'painting'
+            if type === 'painting' && pageType === 'gallery'
               h1= text.general.painting
             else
-              a(href=(lang === 'ru' ? '/' : '/en'))= text.general.painting
+              - var activeClass = (type === 'painting' && pageType === 'picture') ? 'active' : '';
+              - var url = lang === 'ru' ? '/' : '/en';
+              a(href=url, class=activeClass)= text.general.painting
           .col-sm-4.col-md-3.text-center
-            if type === 'graphic'
+            if type === 'graphic' && pageType === 'gallery'
               h1= text.general.graphic
             else
-              a(href=(lang === 'ru' ? '/graphic' : '/en/graphic'))= text.general.graphic
+              - var activeClass = (type === 'graphic' && pageType === 'picture') ? 'active' : '';
+              - var url = lang === 'ru' ? '/graphic' : '/en/graphic';
+              a(href=url class=activeClass)= text.general.graphic
       block content
 
     footer.footer.text-center

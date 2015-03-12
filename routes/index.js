@@ -49,13 +49,14 @@ router.get('/ru', function (req, res, next) {
  * @param {Function}  next      next function
  * @param {String}    lang      'ru' or 'en'
  * @param {String}    category  'painting' or 'graphic'
- * @param {String}    type      'gallery' or 'picture'
+ * @param {String}    pageType      'gallery' or 'picture'
  * @param {String}    [image]   (optional) Image name from the request
  * @returns {{type: *, lang: *, text: {general: *, error: *}}}
  */
-function render(req, res, next, lang, category, type, image) {
+function render(req, res, next, lang, category, pageType, image) {
   var text = require('../lang/general')[lang];
   var config = {
+    pageType: pageType,
     type: category,
     lang: lang,
     text: {
@@ -79,7 +80,7 @@ function render(req, res, next, lang, category, type, image) {
 
   config.images = (category === 'graphic') ? require('../models/graphic') : require('../models/paintings');
 
-  if (type !== 'gallery') {
+  if (pageType !== 'gallery') {
     config.image = image;
     config.info = config.images[image];
     config.text.pageTitle = '"' + config.info[lang] + '". ' + config.text.pageTitle;
@@ -91,5 +92,5 @@ function render(req, res, next, lang, category, type, image) {
     }
   }
 
-  res.render(type === 'gallery' ? 'index' : 'picture', config);
+  res.render(pageType === 'gallery' ? 'index' : 'picture', config);
 }
