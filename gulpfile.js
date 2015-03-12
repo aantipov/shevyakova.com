@@ -33,6 +33,8 @@ gulp.task('less', function () {
 
 gulp.task('css', ['less'], function () {
   gulp.src([
+    'public/roboto-condensed.css',
+    'public/roboto.css',
     '.tmp/bootstrap.css',
     'bower_components/magnific-popup/dist/magnific-popup.css'
   ])
