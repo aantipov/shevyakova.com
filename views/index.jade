@@ -8,7 +8,7 @@ block content
       div.col-md-4.col-sm-6.col-xs-10.col-xs-offset-1.col-sm-offset-0
         .thumb
           a(href= "#{linkPrefix}/#{type}/#{img}", data-title="#{info[lang]} / #{suffix}")
-            img.lazy(src="/img/lazy.png", alt="", data-original=imgUrl + '#{type}/thumb_#{img}.jpg')
+            img.lazy(src="/img/empty.gif", alt="", data-original=imgUrl + '#{type}/thumb_#{img}.jpg')
           noscript
             // Degrade gracefully
             img(src=imgUrl + '#{type}/thumb_#{img}.jpg', width="640", heigh="480")
