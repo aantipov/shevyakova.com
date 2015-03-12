@@ -1,0 +1,424 @@
+@font-size-logo: ceil((@font-size-base * 3.6));  // ~54px
+@spinner-size: ceil((@font-size-base * 3.6));  // ~54px
+@light-font-weight: 300;  // normal - 400
+
+body {
+  background-image: url('/img/dark_wall.png');
+  background-repeat: repeat;
+  background-position: 0 0;
+  font-family: 'Roboto', sans-serif;
+  min-width: 300px;
+}
+
+a {
+  text-decoration: none;
+  font-weight: @light-font-weight;
+  &:hover {
+    text-decoration: none;
+    font-weight: @headings-font-weight;
+  }
+}
+
+header {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: @font-size-logo;
+  text-transform: uppercase;
+  border-bottom: 2px solid @gray-light;
+  line-height: @headings-line-height;
+  margin-top: 10px;
+}
+
+/*​ Icons */
+
+.icons {
+  text-align: center;
+  margin-top: 20px;
+  a {
+    display: inline-block;
+    font-size: @font-size-h1;
+    &:hover {
+      text-decoration: none;
+    }
+    text-align: center;
+  }
+  a.flag {
+    width: 100px;
+  }
+  a.fb {
+    width: 70px;
+  }
+  a.mail {
+    width: 70px;
+  }
+}
+
+/* Navigation */
+
+nav {
+  margin: 20px 0 30px;
+  h1, a {
+    font-size: @font-size-h1;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    line-height: @line-height-base;
+  }
+  a.active {
+    font-weight: @headings-font-weight;
+  }
+}
+
+/* Thumbnails */
+
+.thumb {
+  margin: 0 auto 14px;
+  position: relative;
+  overflow: hidden;
+  max-width: 270px;
+
+  img {
+    max-width: 100%;
+    margin: 0;
+    background-color: @gray-light;
+  }
+
+  img.lazy {
+    min-height: 310px;
+    display: none; // Hide it if js is turned off.
+  }
+
+  .cover {
+    position: absolute;
+    background: #000000;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      opacity: 0.8;
+    }
+    .caption {
+      padding-top: 15%;
+      a.title {
+        font-size: @font-size-h2;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+    .icon {
+      padding-top: 5%;
+      font-size: ceil(@font-size-base*4);
+    }
+  }
+}
+
+/* Gallery arrows */
+
+.mfp-container {
+  min-width: 300px;
+
+  .fa-arrow-circle-left, .fa-arrow-circle-right {
+    position: absolute;
+    top: 48%;
+    font-size: 60px;
+    color: #ABABAB;
+    cursor: pointer;
+    z-index: 1046;
+    &:hover {
+      color: #FBBF3A;
+    }
+  }
+  .fa-arrow-circle-left {
+    left: 0;
+    margin-left: 20px;
+  }
+  .fa-arrow-circle-right {
+    right: 0;
+    margin-right: 20px;
+  }
+
+  .mfp-title {
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    padding: 0;
+    line-height: 40px;
+    color: #ABABAB;
+    span.title {
+      font-size: @font-size-h2;
+    }
+  }
+
+  img.mfp-img {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .mfp-bottom-bar {
+    .mfp-close {
+      position: fixed;
+      right: 20px;
+      top: 5px;
+      width: 20px
+    }
+    .mfp-counter {
+      position: fixed;
+      left: 10px;
+      top: 5px;
+      font-size: 15px;
+    }
+  }
+}
+
+/* Image page */
+#picture-wrapper {
+  .imginfo {
+    p {
+      margin-top: -8px;
+    }
+  }
+
+  .img-wrapper {
+    &, i {
+      display: none;
+    }
+    &.loading {
+      i {
+        display: inline;
+        line-height: 320px;
+        font-size: @spinner-size;
+        color: @gray-lighter;
+      }
+      width: 270px;
+      height: 320px;
+      margin: 0 auto;
+      background-color: @gray-light;
+    }
+  }
+
+  noscript .img-wrapper {
+    display: block;
+  }
+}
+
+/* Footer */
+.footer {
+  padding-top: 20px;
+  a {
+    font-weight: normal;
+  }
+}
+
+/* General Styles */
+
+/*body {
+  background: url('http://shevyakova.com/img/bg.jpg');
+  padding-top: 100px;
+}
+
+p {
+  line-height: 1.8;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 100;
+  margin-bottom: 10px;
+}
+
+.leftline {
+  border-left: 1px solid #F4F4F4;
+  padding-left: 20px;
+}
+
+.rightline {
+  border-right: 1px solid #F4F4F4;
+  padding-right: 20px;
+}*/
+
+/* Masthead */
+
+/*.logo {
+  margin: 10px 0;
+  color: #393959;
+  float: left;
+  text-align: center;
+  font-size: 38px;
+  line-height: 1.2;
+  font-weight: 200;
+  font-family: "Pacifico";
+  font-family: "Century Gothic", "Lucida Grande", Verdana, "Trebuchet MS", Lucida, sans-serif;
+  text-shadow: 0px 1px 1px #000;
+  text-transform: uppercase;
+  span {
+    font-weight: 400;
+    color: #AAA;
+    font-size: 18px;
+  }
+}
+
+.masthead {
+  background: url('http://shevyakova.com/img/headerbg.jpg');
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  box-shadow: 0 1px 8px black;
+}*/
+
+/*.item {
+  width: 270px;
+}
+*/
+
+/*s.filter-nav {
+  list-style: none;
+  margin: 0 0 30px 0;
+  float: left;
+  li {
+    float: left;
+    margin-right: 8px;
+    a {
+      -moz-box-shadow: inset 0px 1px 0px 0px #3e4a50;
+      -webkit-box-shadow: inset 0px 1px 0px 0px #3e4a50;
+      box-shadow: inset 0px 1px 0px 0px #3e4a50;
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #2f3c42), color-stop(1, #222b30));
+      background: -moz-linear-gradient(center top, #2f3c42 5%, #222b30 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2f3c42', endColorstr='#222b30');
+      background-color: #2f3c42;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+      border: 1px solid #212c30;
+      display: inline-block;
+      color: #9da8ac;
+      font-size: 12px;
+      padding: 4px 18px;
+      text-decoration: none;
+      text-shadow: 1px 1px 0px #1a2529;
+      &:hover {
+        -moz-box-shadow: inset 0px 1px 0px 0px #4d5a62;
+        -webkit-box-shadow: inset 0px 1px 0px 0px #4d5a62;
+        box-shadow: inset 0px 1px 0px 0px #4d5a62;
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #3f4d56), color-stop(1, #2e393f));
+        background: -moz-linear-gradient(center top, #3f4d56 5%, #2e393f 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3f4d56', endColorstr='#2e393f');
+        background-color: #3f4d56;
+        color: #FFF;
+      }
+    }
+    &:active a {
+      -moz-box-shadow: inset 0px 0px 10px 0px #1a2021;
+      -webkit-box-shadow: inset 0px 0px 10px 0px #1a2021;
+      box-shadow: inset 0px 0px 10px 0px #1a2021;
+      background: #2b373e;
+      color: #FFF;
+    }
+  }
+}
+
+*
+
+/
+
+/*@media (max-width: 767px) {
+
+  .masthead {
+    padding: 0 20px;
+  }
+
+  .socials {
+    margin-right: 40px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  body {
+    padding-top: 160px;
+  }
+
+  .masthead {
+    padding: 0 20px 20px 20px;
+  }
+
+  .socials.pull-right {
+    float: none;
+    clear: both;
+    margin-left: -10px;
+  }
+
+}
+
+#sb-title-inner {
+  *//* Title color in modal window *//*
+  color: #FBBF3A;
+}
+
+*/
+
+/*
+
+.imginfo {
+  color: #FBBF3A;
+  p {
+    font-size: 16px;
+    margin-top: -7px;
+  }
+}
+
+*//* Display footer at bottom *//*
+
+html, body {
+  height: 100%;
+}
+
+#wrap {
+  min-height: 100%;
+}
+
+#main {
+  *//*overflow:auto;*//*
+  padding-bottom: 30px; *//* this needs to be bigger than footer height*//*
+}
+
+*/
+
+/*
+.fb-like {
+  margin-top: 10px;
+  float: right;
+  padding-right: 100px;
+}
+
+*/
+/* Modal window *//*
+
+#sb-title, #sb-title-inner {
+  height: 4.5em;
+}
+
+#sb-title, #sb-title-inner p {
+  line-height: 1.4;
+}
+
+#sb-title-inner {
+  b {
+    display: block;
+    font-size: 1.6em;
+  }
+  span {
+    display: block;
+  }
+}
+
+#error {
+  width: 70%;
+  margin: 0 auto;
+}*/
