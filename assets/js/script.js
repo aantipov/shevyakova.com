@@ -56,7 +56,7 @@
           imgWrapper.removeClass('loading');
           var width = $(this).prop('width');
           var height = $(this).prop('height');
-          $(this).prop('width', 270).prop('height', 320).css('opacity', 0).appendTo(imgWrapper);
+          $(this).css({width: 270, height: 320}).css('opacity', 0).appendTo(imgWrapper);
           $(this).animate({width: width, height: height, opacity: 1}, 600);
         }
       });
