@@ -1,4 +1,5 @@
 @font-size-logo: ceil((@font-size-base * 3.6));// ~54px
+@spinner-size: ceil((@font-size-base * 3.6)); // ~54px
 @light-font-weight: 300; // normal - 400
 
 body {
@@ -160,6 +161,28 @@ nav {
     p {
       margin-top: -8px;
     }
+  }
+
+  .img-wrapper {
+    &, i {
+      display: none;
+    }
+    &.loading {
+      i {
+        display: inline;
+        line-height: 320px;
+        font-size: @spinner-size;
+        color: @gray-lighter;
+      }
+      width: 270px;
+      height: 320px;
+      margin: 0 auto;
+      background-color: @gray-light;
+    }
+  }
+
+  noscript .img-wrapper {
+    display: block;
   }
 }
 
@@ -355,20 +378,6 @@ html, body {
   margin-top: 10px;
   float: right;
   padding-right: 100px;
-}
-
-#picture-wrapper .img-wrapper {
-  display: none;
-  &.loading {
-    width: 270px;
-    height: 320px;
-    margin: 0 auto;
-    background: #BBBBBD url('http://shevyakova.com/img/ajax-loader.gif') 50% 45% no-repeat;
-  }
-}
-
-#picture-wrapper noscript .img-wrapper {
-  display: block;
 }
 
 */
