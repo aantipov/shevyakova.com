@@ -44,7 +44,7 @@ gulp.task('css', ['less'], function () {
     .pipe(gulp.dest('public'));
 });
 
-gulp.task('default', function () {
+gulp.task('default', ['css', 'js'], function () {
   gulp.watch('assets/less/*.less', ['css']);
   gulp.watch('assets/js/script.js', ['js']);
 });
