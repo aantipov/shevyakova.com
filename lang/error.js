@@ -2,28 +2,20 @@ var words = {
   en: {
     404: {
       title: "Alina Shevyakova. Page Not Found",
-      header: "404: Page not Found",
-      descr: [
-        '<p>Sorry, but the page you are looking for has not been found. Try checking the URL for errors.</p>',
-        '<p>If you feel you\'ve reached this page as an error on my part, please ',
-        '<a href="mailto:ashevyakova@gmail.com">contact me</a>',
-        '</p>'
-      ].join('')
+      header: "404 Error: Page not Found",
+      descr: '<p>Sorry, but the page you are looking for has not been found. Perhaps it has been deleted.</p>'
     },
     500: {
       title: "Alina Shevyakova. Error occured",
-      header: "500: Some error occured",
-      descr: '<p>Sorry, but there is some error occured. We already know about it and fix it.</p>'
+      header: "500 Error: Some error occured",
+      descr: '<p>Sorry, but there is some error occured. We already know about it and working on it.</p>'
     }
   },
   ru: {
     404: {
       title: "Алина Шевякова. Страница не найдена",
       header: "404: Страница не найдена",
-      descr: [
-        '<p>К сожалению мы не можем найти страницу, которую вы ищете. Возможно ошибка в адресе страницы.</p>',
-        '<p>Если же адрес правильный, то <a href="mailto:ashevyakova@gmail.com">сообщите</a> пожалуйста мне об этой ошибке.</p>'
-      ].join('')
+      descr: '<p>К сожалению мы не можем найти страницу, которую вы ищете. Возможно она была удалена</p>'
     },
     500: {
       title: "Алина Шевякова. Произошла ошибка",
