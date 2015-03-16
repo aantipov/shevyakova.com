@@ -52,6 +52,7 @@ app.use(function (err, req, res, next) {
     error: require('./lang/error')[lang][(err.status === 404) ? 404 : 500],
     general: require('./lang/general')[lang]
   };
+  console.error(err);
   res.status(err.status || 500);
   res.render('error', {
     header: text.error.header,

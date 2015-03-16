@@ -83,13 +83,13 @@ function render(req, res, next, lang, category, pageType, image) {
   if (pageType !== 'gallery') {
     config.image = image;
     config.info = config.images[image];
-    config.text.pageTitle = '"' + config.info[lang] + '". ' + config.text.pageTitle;
     // Raise 404 if there is no image.
     if (!config.info) {
       var err = new Error('Not Found');
       err.status = 404;
       return next(err);
     }
+    config.text.pageTitle = '"' + config.info[lang] + '". ' + config.text.pageTitle;
   }
 
   res.render(pageType === 'gallery' ? 'index' : 'picture', config);
