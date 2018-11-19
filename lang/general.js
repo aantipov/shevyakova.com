@@ -1,4 +1,4 @@
-var words = {
+module.exports = {
     en: {
         alina: 'Alina Shevyakova',
         painting: 'Painting',
@@ -20,5 +20,3 @@ var words = {
         keywords: 'картины, графика, живопись, рисунки, галерея, художники, искусство, творчество'
     }
 };
-
-module.exports = words;

@@ -1,28 +1,30 @@
-'use strict';
-(function ($) {
-  $(document).ready(function () {
-    $('.caption a').on('click', function (ev) {
+(function($) {
+  'use strict';
+  $(document).ready(function() {
+    $('.caption a').on('click', function(ev) {
+      console.log('ON CLICK');
       // Stop propagation to forbid popup appearance.
       ev.stopPropagation();
     });
     if ($('#gallery-wrapper').length) {
-      $('.cover').magnificPopup({
+      /*$('.cover').magnificPopup({
         type: 'image',
         gallery: {
           enabled: true,
-          arrowMarkup: '<i class="fa fa-arrow-circle-%dir%"></i>'
+          arrowMarkup: '<i class="fa fa-arrow-circle-%dir%"></i>',
         },
         image: {
           // options for image content type
           titleSrc: 'data-title',
-          markup: '<div class="mfp-figure">' +
-          '<div class="mfp-title"></div>' +
-          '<div class="mfp-img"></div>' +
-          '<div class="mfp-bottom-bar">' +
-          '<div class="mfp-close"></div>' +
-          '<div class="mfp-counter"></div>' +
-          '</div>' +
-          '</div>'
+          markup:
+            '<div class="mfp-figure">' +
+            '<div class="mfp-title"></div>' +
+            '<div class="mfp-img"></div>' +
+            '<div class="mfp-bottom-bar">' +
+            '<div class="mfp-close"></div>' +
+            '<div class="mfp-counter"></div>' +
+            '</div>' +
+            '</div>',
         },
         mainClass: 'mfp-with-zoom', // this class is for CSS animation below
         zoom: {
@@ -33,16 +35,20 @@
           // The "opener" function should return the element from which popup will be zoomed in
           // and to which popup will be scaled down
           // By default it looks for an image tag:
-          opener: function (openerElement) {
+          opener: function(openerElement) {
             // openerElement is the element on which popup was initialized, in this case its <a> tag
             // you don't need to add "opener" option if this code matches your needs, it's defailt one.
-            return openerElement.is('img') ? openerElement : openerElement.find('img');
-          }
-        }
-      });
+            return openerElement.is('img')
+              ? openerElement
+              : openerElement.find('img');
+          },
+        },
+      });*/
 
       // Lazy load
-      $("img.lazy").show().lazyload({threshold: 100, effect: "fadeIn"});
+      $('img.lazy')
+        .show()
+        .lazyload({ threshold: 100, effect: 'fadeIn' });
     }
 
     // Load image on picture page.
@@ -52,13 +58,18 @@
       var alt = imgWrapper.attr('data-alt');
       imgWrapper.show();
       $('<img />', {
-        src: src, alt: alt, load: function () {
+        src: src,
+        alt: alt,
+        load: function() {
           imgWrapper.removeClass('loading');
           var width = $(this).prop('width');
           var height = $(this).prop('height');
-          $(this).css({width: 270, height: 320}).css('opacity', 0).appendTo(imgWrapper);
-          $(this).animate({width: width, height: height, opacity: 1}, 600);
-        }
+          $(this)
+            .css({ width: 270, height: 320 })
+            .css('opacity', 0)
+            .appendTo(imgWrapper);
+          $(this).animate({ width: width, height: height, opacity: 1 }, 600);
+        },
       });
     }
   });

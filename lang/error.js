@@ -1,4 +1,4 @@
-var words = {
+module.exports = {
   en: {
     404: {
       title: "Alina Shevyakova. Page Not Found",
@@ -24,5 +24,3 @@ var words = {
     }
   }
 };
-
-module.exports = words;

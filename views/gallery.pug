@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  div#gallery-wrapper.row
+    each image in images
+      div.col-lg-3.col-md-4.col-sm-6.col-xs-12
+        .thumb
+          a(href= image.pageUrl data-title=`${image.title} / ${image.descr}`)
+            img.lazy(src="/img/empty.gif" alt="" data-original=image.thumbUrl)
+          noscript
+            // Degrade gracefully
+            img(src=image.thumbUrl width="640" heigh="480")
+          div.cover-disable(
+            href=image.url
+               data-title=`<span class=\"title\">${image.title}</span><span class=\"suffix\">  ${image.descr}</span>`
+          )
+            .caption
+              p.title= image.title
+              p= image.descr

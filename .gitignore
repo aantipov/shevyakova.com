@@ -1,10 +1,13 @@
 /node_modules
-/public/images
+/public
 /dist
 /.tmp
 /.build
 /app/components/*/node_modules
 /settings/.environment
+
+# VSCode Configuration
+.vscode
 
 # WebStorm Configuration
 .idea
@@ -20,8 +23,5 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
-
-/public/style.css
-/public/scripts.js
 
 /bower_components
