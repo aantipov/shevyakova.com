@@ -208,32 +208,12 @@ nav {
 
 /* Image page */
 #picture-wrapper {
-  .imginfo {
-    p {
-      margin-top: -8px;
-    }
+  .imginfo p {
+    margin-top: -8px;
   }
 
-  .img-wrapper {
-    &, i {
-      display: none;
-    }
-    &.loading {
-      i {
-        display: inline;
-        line-height: 320px;
-        font-size: @spinner-size;
-        color: @gray-lighter;
-      }
-      width: 270px;
-      height: 320px;
-      margin: 0 auto;
-      background-color: @gray-light;
-    }
-  }
-
-  noscript .img-wrapper {
-    display: block;
+  .img-wrapper img {
+    max-width: 100%;
   }
 }
 

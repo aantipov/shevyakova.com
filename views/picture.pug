@@ -5,11 +5,7 @@ block content
     .imginfo.text-center
       h2= image.title
       p= image.descr
-    .img-wrapper.text-center.loading(data-src=image.url data-alt=image.title)
-      i.fa.fa-circle-o-notch.fa-spin
-    noscript
-      // Degrade gracefully
-      .img-wrapper.text-center
+    .img-wrapper.text-center
         img(src=image.url)
     .fb-like(
     data-href=url,
